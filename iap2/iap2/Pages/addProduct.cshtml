@@ -1,0 +1,64 @@
+﻿@page
+@model iap2.Pages.addProductModel
+@{
+}
+
+<form method="post">
+    <div>
+        <label asp-for=@Model.item.Name></label>
+        <input asp-for=@Model.item.Name/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.Description></label>
+        <input asp-for=@Model.item.Description/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.Size></label>
+        <input asp-for=@Model.item.Size/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.Ingredients></label>
+        <input asp-for=@Model.item.Ingredients/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.Price></label>
+        <input asp-for=@Model.item.Price/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.Category></label>
+        <input asp-for=@Model.item.Category/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImage></label>
+        <input asp-for=@Model.item.ProductImage/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImageAlt></label>
+        <input asp-for=@Model.item.ProductImageAlt/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage1></label>
+        <input asp-for=@Model.item.ProductImagePage1/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage2></label>
+        <input asp-for=@Model.item.ProductImagePage2/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage3></label>
+        <input asp-for=@Model.item.ProductImagePage3/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage1Alt></label>
+        <input asp-for=@Model.item.ProductImagePage1Alt/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage2Alt></label>
+        <input asp-for=@Model.item.ProductImagePage2Alt/>
+    </div>
+    <div>
+        <label asp-for=@Model.item.ProductImagePage3Alt></label>
+        <input asp-for=@Model.item.ProductImagePage3Alt/>
+    </div>
+    <input type="submit" value="Save" />
+</form>

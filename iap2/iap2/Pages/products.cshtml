@@ -1,0 +1,20 @@
+﻿@page
+@model iap2.Pages.productsModel
+@{
+}
+@{
+    Layout = "_Layout";
+}
+<div class="itemsBox">
+    @foreach (var product in Model.itemsList)
+    {
+        <div class="singleItem">
+            <h3>@product.Name</h3>
+            <img class="previewImg" src="./assets/@product.ProductImage" alt="@product.ProductImageAlt">
+            <p>@product.Price $</p>
+            <P>@product.Category</P>
+            <p>@product.Size</p>
+            <a asp-page="Checkout" asp-route-id="@product.Id">Checkout</a>
+        </div>
+    }
+</div>
