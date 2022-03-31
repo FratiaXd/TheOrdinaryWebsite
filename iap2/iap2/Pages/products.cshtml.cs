@@ -10,6 +10,9 @@ namespace iap2.Pages
     {
         public List<Product> itemsList { get; set; }
 
+        [BindProperty (SupportsGet = true)]
+        public int Id { get; set; }
+
         private readonly AppDataContext _db;
 
         public productsModel(AppDataContext db)
@@ -19,6 +22,12 @@ namespace iap2.Pages
         public void OnGet()
         {
             itemsList = _db.Products.ToList();
+        }
+        public IActionResult OnGetDelete()
+        {
+            _db.Remove(_db.Products.Find(Id));
+            _db.SaveChanges();
+            return RedirectToPage("products");
         }
     }
 }
