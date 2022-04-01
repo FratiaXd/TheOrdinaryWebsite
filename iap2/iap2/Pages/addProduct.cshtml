@@ -5,6 +5,10 @@
 
 <form method="post">
     <div>
+        <label asp-for=@Model.item.Id></label>
+        <input asp-for=@Model.item.Id readonly/>
+    </div>
+    <div>
         <label asp-for=@Model.item.Name></label>
         <input asp-for=@Model.item.Name/>
     </div>
@@ -61,4 +65,5 @@
         <input asp-for=@Model.item.ProductImagePage3Alt/>
     </div>
     <input type="submit" value="Save" />
+    <input type="submit" asp-page-handler="Update" value="Update" />
 </form>

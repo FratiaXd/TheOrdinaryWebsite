@@ -8,6 +8,8 @@ namespace iap2.Pages
     {
         [BindProperty]
         public Product item { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public int Id { get; set; }
 
         private readonly AppDataContext _db;
 
@@ -17,10 +19,17 @@ namespace iap2.Pages
         }
         public void OnGet()
         {
+            item = _db.Products.Find(Id);
         }
         public IActionResult OnPost()
         {
             _db.Products.Add(item);
+            _db.SaveChanges();
+            return RedirectToPage("products");
+        }
+        public IActionResult OnPostUpdate()
+        {
+            _db.Products.Update(item);
             _db.SaveChanges();
             return RedirectToPage("products");
         }

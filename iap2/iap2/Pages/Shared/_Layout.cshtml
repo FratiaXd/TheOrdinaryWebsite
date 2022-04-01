@@ -1,39 +1,38 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>The Ordinary</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - iap2</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/anim.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="~/css/style_pc.css">
+    <!--<link rel="stylesheet" href="~/css/site.css" />-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="line_animate()">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">iap2</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/products">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/addProduct">Add products</a>
-                        </li>
-                    </ul>
-                </div>
+        <div id="headnav">
+            <div>
+                <img id="moto" src="../assets/moto.png" alt="Brand moto">
             </div>
-        </nav>
+            <div>
+                <img id="logo" src="../assets/logo.png" alt="Brand logo">
+            </div>
+            <a href="#" class="sidebarOpen" onclick="sidebarFun()"><i class="fas fa-bars"></i></a>
+            <nav id="navigation">
+                <div class="sidebarClose" onclick="sidebarFun()"><i class="fas fa-bars"></i></div>
+                <a href="index.html">HOME</a>
+                <a asp-area="" asp-page="/products">PRODUCTS</a>
+                <a href="sign_up.html">SIGN UP</a>
+                <a asp-area="" asp-page="/addProduct">ADD PRODUCTS</a>
+            </nav>
+            <br>
+            <div id="line"></div>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

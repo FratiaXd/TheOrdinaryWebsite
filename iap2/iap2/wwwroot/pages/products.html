@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Ordinary</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/style_pc.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_mobile.css">
+        <script src="../javascript/anim.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/366979dfd8.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+    <!--ECOMMERCE HOME page for SOFT20181 by Katrina-->
+    <body onload="line_animate()">
+        <header>
+            <section id="headnav">
+                <section>
+                    <img id="moto" src="../assets/moto.png" alt="Brand moto">
+                </section>
+                <section>
+                    <img id="logo" src="../assets/logo.png" alt="Brand logo">
+                </section>
+                <a href="#" class="sidebarOpen" onclick="sidebarFun()"><i class="fas fa-bars"></i></a>
+                <nav id="navigation">
+                    <section class="sidebarClose" onclick="sidebarFun()"><i class="fas fa-bars"></i></section>
+                    <a href="index.html">HOME</a>
+                    <a href="products.html" class="active">PRODUCTS</a>
+                    <a href="sign_up.html">SIGN UP</a>
+                    <a href="#" id="font_incr">A</a>
+                    <a href="#" id="font_default">a</a>
+                    <a href="#" id="grey"><span>&#9632;</span></a>
+                    <a href="#" id="beige"><span>&#9632;</span></a>
+                    <a href="#" id="white"><span>&#9633;</span></a>
+                </nav>
+                <br>
+                <section id="line"></section>
+            </section>
+        </header>
+        <section class="count">
+            <p>| (8/8) DISPLAYED |</p>
+        </section>
+        <section class="layer">
+            <section class="column1">
+                <section class="quickView">
+                    <img id="im1" src="../assets/niacinamide.jpg" alt="Niacinamide 10% & Zinc 1%">
+                    <button class="btn" onclick="onClick(im1, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="niacinamide.html" class="product">Niacinamide 10% & Zinc 1% - 30ml</a>
+                <p class="price">£5.00</p>
+            </section>
+            <section class="column2">
+                <section class="quickView">
+                    <img id="im2" src="../assets/peeling.jpg" alt="AHA 30% + BHA 2% Peeling">
+                    <button class="btn" onclick="onClick(im2, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="peeling.html" class="product">AHA 30% + BHA 2% Peeling - 30ml</a>
+                <p class="price">£6.25</p>
+            </section>
+            <section class="column3">
+                <section class="quickView">
+                    <img id="im3" src="../assets/hyaluronic.jpg" alt="Hyaluronic Acid 2% + B5">
+                    <button class="btn" onclick="onClick(im3, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="hylauronic.html" class="product">Hyaluronic Acid 2% + B5 - 30ml</a>
+                <p class="price">£5.75</p>
+            </section>
+            <section class="column4">
+                <section class="quickView">
+                    <img id="im4" src="../assets/cleanser.jpg" alt="Supersize Squalane Cleanser - 150ml">
+                    <button class="btn" onclick="onClick(im4, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="cleanser.html" class="product">Supersize Squalane Cleanser - 150ml</a>
+                <p class="price">£9.99</p>
+            </section>
+        </section>
+        <section class="layer">
+            <section class="column1">
+                <section class="quickView">
+                    <img id="im5" src="../assets/lactic.jpg" alt="Lactic Acid 10%">
+                    <button class="btn" onclick="onClick(im5, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="lactic.html" class="product">Lactic Acid 10% - 30ml</a>
+                <p class="price">£5.50</p>
+            </section>
+            <section class="column2">
+                <section class="quickView">
+                    <img id="im6" src="../assets/powder.jpg" alt="100% Niacinamide Powder - 20g">
+                    <button class="btn" onclick="onClick(im6, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="niacinamidepow.html" class="product">100% Niacinamide Powder - 20g</a>
+                <p class="price">£4.75</p>
+            </section>
+            <section class="column3">
+                <section class="quickView">
+                    <img id="im7" src="../assets/caffeine.jpg" alt="CAFFEINE SOLUTION 5% + EGCG">
+                    <button class="btn" onclick="onClick(im7, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="caffeine.html" class="product">CAFFEINE SOLUTION 5% + EGCG - 30ml</a>
+                <p class="price">£5.75</p>
+            </section>
+            <section class="column4">
+                <section class="quickView">
+                    <img id="im8" src="../assets/serum.jpg" alt="MULTI-PEPTIDE SERUM - 60ml">
+                    <button class="btn" onclick="onClick(im8, false)"> <i class="fas fa-search"></i> Quick view</button>
+                </section>
+                <p class="brand">The Ordinary</p>
+                <a href="serum.html" class="product">MULTI-PEPTIDE SERUM - 60ml</a>
+                <p class="price">£9.99</p>
+            </section>
+        </section>
+        <section id="modal1" class="modal" onclick="onClick(im0, true)">
+            <section class="modal_cont">
+                <img id="im0">
+            </section>
+        </section>
+        <footer>
+            <img id="foot" src="../assets/abnormal.png" alt="Tha abnormal beauty logo">
+            <section id="links_section">
+                <a href="https://www.instagram.com/deciem/" class="links"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/deciem" class="links"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/deciem" class="links"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@deciem" class="links"><i class="fab fa-tiktok"></i></a>
+            </section>
+            <p>© KATRINA PETREIKYTE. ALL RIGHTS RESERVED. 2021</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Ordinary</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/style_pc.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_mobile.css">
+        <script src="../javascript/anim.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/366979dfd8.js" crossorigin="anonymous"></script>
+    </head>
+    <!--ECOMMERCE HOME page for SOFT20181 by Katrina-->
+    <body onload="line_animate()">
+        <header>
+            <section id="headnav">
+                <section>
+                    <img id="moto" src="../assets/moto.png" alt="Brand moto">
+                </section>
+                <section>
+                    <img id="logo" src="../assets/logo.png" alt="Brand logo">
+                </section>
+                <a href="#" class="sidebarOpen" onclick="sidebarFun()"><i class="fas fa-bars"></i></a>
+                <nav id="navigation">
+                    <section class="sidebarClose" onclick="sidebarFun()"><i class="fas fa-bars"></i></section>
+                    <a href="index.html">HOME</a>
+                    <a href="products.html">PRODUCTS</a>
+                    <a href="sign_up.html" class="active">SIGN UP</a>
+                    <a href="#" id="font_incr">A</a>
+                    <a href="#" id="font_default">a</a>
+                    <a href="#" id="grey"><span>&#9632;</span></a>
+                    <a href="#" id="beige"><span>&#9632;</span></a>
+                    <a href="#" id="white"><span>&#9633;</span></a>
+                </nav>
+                <br>
+                <section id="line"></section>
+            </section>
+        </header>
+        <section id="newsletter">
+            <section id="news_im">
+                <img src="../assets/showcase9.png" alt="Bottles">
+            </section>
+            <section id="letter">
+                <section id="news">
+                    <p>SIGN UP TO OUR NEWSLETTER</p>
+                </section>
+                <form onsubmit="Message()">
+                    <label for="fname">FIRST NAME:</label><br>
+                    <input type="text" id="fname" name="fname" pattern="[a-zA-Z\s]{1,}" required 
+                    title="Letters and spaces"><br>
+                    <label for="lname">LAST NAME:</label><br>
+                    <input type="text" id="lname" name="lname"  pattern="[a-zA-Z\s]{1,}" required
+                    title="Letters and spaces"><br>
+                    <label for="email">EMAIL ADDRESS:</label><br>
+                    <input type="email" id="email" name="email" placeholder="name@domain.com"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br>
+                    <input type="submit" id="submit" value="SUBMIT">
+                </form>
+            </section>
+        </section>
+        <footer id="foot_sign">
+            <img id="foot" src="../assets/abnormal.png" alt="Tha abnormal beauty logo">
+            <section id="links_section">
+                <a href="https://www.instagram.com/deciem/" class="links"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/deciem" class="links"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/deciem" class="links"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@deciem" class="links"><i class="fab fa-tiktok"></i></a>
+            </section>
+            <p>© KATRINA PETREIKYTE. ALL RIGHTS RESERVED. 2021</p>
+        </footer>
+    </body>
+</html>
