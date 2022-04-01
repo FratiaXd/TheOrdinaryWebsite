@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace iap2.Model
 {
-    public class AppDataContext : DbContext
+    public class AppDataContext : IdentityDbContext<AppUser>
     {
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options) { }
 

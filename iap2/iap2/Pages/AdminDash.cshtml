@@ -1,0 +1,15 @@
+﻿@page
+@model iap2.Pages.AdminDashModel
+@{
+}
+
+<div class="itemsBox">
+    @foreach (var role in Model.roles)
+    {
+        <div class="singleItem">
+            <h3>@role.Id</h3>
+            <p>@role.Name</p>
+            <a asp-page="products" asp-route-id="@role.Id">Delete</a>
+        </div>
+    }
+</div>

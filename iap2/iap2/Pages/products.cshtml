@@ -5,6 +5,13 @@
 @{
     Layout = "_Layout";
 }
+
+<form method="post"> 
+    <label asp-for="searchString"></label>
+    <input asp-for="searchString" />
+    <input type="submit" value="Search" />
+</form>
+
 <div class="itemsBox">
     @foreach (var product in Model.itemsList)
     {

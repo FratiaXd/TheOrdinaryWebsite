@@ -19,24 +19,19 @@ header {
     z-index: 1;
     padding-bottom: 1%;
 }
-#logo{
-    width: 160px;
-    float: right;
-    padding-right: 35px;
+#logo {
+    width: 100px;
+    margin-left: 1%;
 }
 #moto{
-    float: right;
-    width: 200px;
-    padding-top: 26px;
-    padding-right: 50px;
+    width: 125px;
 }
 nav {
-    padding-top: 23px;
     margin-left: 2%;
     display: block;
 }
 nav a {
-    font-size: 14px;
+    font-size: 13px;
     margin-left: 1.8%;
     margin-right: 1.8%;
     text-decoration: none;
@@ -71,4 +66,29 @@ nav a:hover {
 }
 .previewImg {
     width: 100%;
+}
+.navbar-list1 {
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.navbar-list2 {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0px;
+}
+.nav-item {
+    white-space: nowrap;
+}
+.nav-item a {
+    text-decoration: none;
+}
+#manage {
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+#logout {
+    font-size: 13px;
+    padding-top: 9px;
 }

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@using iap2.Model;
+@inject SignInManager<AppUser> SignInManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>The Ordinary</title>
@@ -15,7 +19,42 @@
 </head>
 <body onload="line_animate()">
     <header>
-        <div id="headnav">
+        <nav class="navbar navbar-expand-sm">
+            <div class="containerHead">
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-list1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">PRIVACY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/products">PRODUCTS</a>
+                        </li>
+                        @{
+                            if (SignInManager.IsSignedIn(User) && User.IsInRole("AdminManager"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/addProduct">ADD PRODUCT</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/AdminDash">DASHBOARD</a>
+                                </li>
+                            }
+                        }                       
+                    </ul>
+                </div>
+            </div>
+            <img id="moto" src="~/assets/moto.png" alt="Brand moto">
+            <img id="logo" src="~/assets/logo.png" alt="Brand logo">
+            <partial name="_LoginPartial" />
+        </nav>
+        <div id="line"></div>
+    </header>
+    
+    <!--<header>
+        <div class="headnav">
             <div>
                 <img id="moto" src="../assets/moto.png" alt="Brand moto">
             </div>
@@ -29,11 +68,12 @@
                 <a asp-area="" asp-page="/products">PRODUCTS</a>
                 <a href="sign_up.html">SIGN UP</a>
                 <a asp-area="" asp-page="/addProduct">ADD PRODUCTS</a>
+                <partial name="_LoginPartial" />
             </nav>
             <br>
             <div id="line"></div>
         </div>
-    </header>
+    </header>-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -8,7 +8,9 @@ namespace iap2.Pages
 {
     public class productsModel : PageModel
     {
-        public List<Product> itemsList { get; set; }
+        [BindProperty]
+        public string searchString { get; set; }
+        public IEnumerable<Product> itemsList { get; set; }
 
         [BindProperty (SupportsGet = true)]
         public int Id { get; set; }
@@ -22,6 +24,10 @@ namespace iap2.Pages
         public void OnGet()
         {
             itemsList = _db.Products.ToList();
+        }
+        public void OnPost()
+        {
+            itemsList = _db.Products.Where(p => p.Description.Contains(searchString));
         }
         public IActionResult OnGetDelete()
         {
