@@ -16,7 +16,7 @@
     @foreach (var product in Model.itemsList)
     {
         <div class="singleItem">
-            <h3>@product.Name</h3>
+            <a asp-page="SingleProduct" asp-route-id="@product.Id">@product.Name</a>
             <img class="previewImg" src="./assets/@product.ProductImage" alt="@product.ProductImageAlt">
             <p>@product.Price $</p>
             <P>@product.Category</P>

@@ -166,3 +166,5 @@ C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\
 C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\Pages\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\Pages\AdminDash.cshtml.g.cs
+C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\Pages\SingleProduct.cshtml.g.cs
+C:\Users\Owner\source\repos\TheOrdinaryWebsite\iap2\iap2\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs

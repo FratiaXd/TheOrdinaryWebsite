@@ -1,0 +1,10 @@
+﻿@page
+@model iap2.Pages.SingleProductModel
+@{
+}
+<div>
+    <h3>@Model.item.Name</h3>
+    <img class="previewImg" src="./assets/@Model.item.ProductImage" alt="@Model.item.ProductImageAlt">
+    <p>@Model.item.Price</p>
+    <a asp-page="Cart" asp-route-id="@Model.item.Id">ADD TO CART</a>
+</div>
