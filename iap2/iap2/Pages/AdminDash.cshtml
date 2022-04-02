@@ -10,10 +10,11 @@
             <h3>@role.Id</h3>
             <p>@role.Name</p>
             <a asp-page="AdminDash" asp-route-id="@role.Id" asp-page-handler="Delete">Delete role</a>
+            <br />
         </div>
     }
 </div>
-
+<br />
 <form method="post">
     <div>
         <label asp-for=@Model.roleName></label>
@@ -21,3 +22,23 @@
     </div>
     <input type="submit" value="Add role" />
 </form>
+<br />
+<br />
+<br />
+<br />
+<div class="itemsBox">
+    @foreach (var user in Model.users)
+    {
+        <div class="singleItem">
+            <h3>@user.Id</h3>
+            <p>@user.Email</p>
+            <p>@user.LastName</p>
+            <a asp-page="AdminDash" asp-route-id="@user.Id" asp-page-handler="Delete">Delete user</a>
+            <br />
+            <form method="post" asp-page-handler="Update" asp-route-id="@user.Id">
+                <input asp-for="passwordString"/>
+                <input type="submit" value="Update password" />
+            </form>
+        </div>
+    }
+</div>

@@ -12,25 +12,38 @@ namespace iap2.Pages
     public class AdminDashModel : PageModel
     {
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
         public List<IdentityRole> roles { get; set; }
+        public List<AppUser> users { get; set;}
         [BindProperty(SupportsGet = true)]
         public string Id { get; set; }
         [BindProperty]
+        public string passwordString { get; set; }
+        [BindProperty]
         public string roleName { get; set; }
-
-        public AdminDashModel(RoleManager<IdentityRole> roleManager)
+        public AdminDashModel(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
+            _userManager = userManager;
         }
         public async Task<IActionResult> OnGetAsync()
         {
             roles = await _roleManager.Roles.ToListAsync();
+            users = await _userManager.Users.ToListAsync();
             return Page();
         }
         public async Task<IActionResult> OnGetDelete()
         {
             var role = await _roleManager.FindByIdAsync(Id);
-            var result = await _roleManager.DeleteAsync(role);
+            var user = await _userManager.FindByIdAsync(Id);
+            if (role != null)
+            {
+                await _roleManager.DeleteAsync(role);
+            }
+            else if (user != null)
+            {
+                await _userManager.DeleteAsync(user);
+            }
             return RedirectToPage("AdminDash");
         }
         public async Task<IActionResult> OnPostAsync()
@@ -43,6 +56,13 @@ namespace iap2.Pages
             {
                 ModelState.AddModelError("", "No role specified");
             }
+            return RedirectToPage("AdminDash");
+        }
+        public async Task<IActionResult> OnPostUpdateAsync()
+        {
+            var users = await _userManager.FindByIdAsync(Id);
+            await _userManager.RemovePasswordAsync(users);
+            await _userManager.AddPasswordAsync(users, passwordString);
             return RedirectToPage("AdminDash");
         }
     }
