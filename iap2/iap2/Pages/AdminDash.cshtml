@@ -9,7 +9,15 @@
         <div class="singleItem">
             <h3>@role.Id</h3>
             <p>@role.Name</p>
-            <a asp-page="products" asp-route-id="@role.Id">Delete</a>
+            <a asp-page="AdminDash" asp-route-id="@role.Id" asp-page-handler="Delete">Delete role</a>
         </div>
     }
 </div>
+
+<form method="post">
+    <div>
+        <label asp-for=@Model.roleName></label>
+        <input asp-for=@Model.roleName />
+    </div>
+    <input type="submit" value="Add role" />
+</form>
