@@ -7,7 +7,9 @@
     @foreach (var role in Model.roles)
     {
         <div class="singleItem">
-            <h3>@role.Id</h3>
+            <h4>Id:</h4>
+            <p>@role.Id</p>
+            <h4>Name:</h4>
             <p>@role.Name</p>
             <a asp-page="AdminDash" asp-route-id="@role.Id" asp-page-handler="Delete">Delete role</a>
             <br />
@@ -27,18 +29,25 @@
 <br />
 <br />
 <div class="itemsBox">
-    @foreach (var user in Model.users)
+    @foreach (var user in Model.userRolesViewModel)
     {
         <div class="singleItem">
-            <h3>@user.Id</h3>
+            <h4>Id:</h4>
+            <p>@user.Id</p>
+            <h4>Email:</h4>
             <p>@user.Email</p>
+            <h4>Name:</h4>
+            <p>@user.FirstName</p>
+            <h4>Surname:</h4>
             <p>@user.LastName</p>
+            <h4>Role:</h4>
+            <p>@string.Join(" , ", user.Roles.ToList())</p>
             <a asp-page="AdminDash" asp-route-id="@user.Id" asp-page-handler="Delete">Delete user</a>
             <br />
             <form method="post" asp-page-handler="Update" asp-route-id="@user.Id">
                 <input asp-for="passwordString"/>
                 <input type="submit" value="Update password" />
-            </form>
+            </form>            
         </div>
     }
 </div>
