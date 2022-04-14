@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using iap2.Model;
 
 namespace iap2.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    partial class AppDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220414153801_ProductChange")]
+    partial class ProductChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,8 +242,6 @@ namespace iap2.Migrations
 
                     b.HasKey("ItemId");
 
-                    b.HasIndex("ProductId");
-
                     b.ToTable("ShoppingCartItems");
                 });
 
@@ -251,6 +251,9 @@ namespace iap2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CartItemItemId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
@@ -295,6 +298,8 @@ namespace iap2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartItemItemId");
 
                     b.ToTable("Products");
                 });
@@ -350,14 +355,15 @@ namespace iap2.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("iap2.Model.Product", b =>
+                {
+                    b.HasOne("iap2.Model.CartItem", null)
+                        .WithMany("Products")
+                        .HasForeignKey("CartItemItemId");
+                });
+
             modelBuilder.Entity("iap2.Model.CartItem", b =>
                 {
-                    b.HasOne("iap2.Model.Product", "Products")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

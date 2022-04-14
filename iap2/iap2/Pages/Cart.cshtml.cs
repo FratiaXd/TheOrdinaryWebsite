@@ -11,9 +11,13 @@ namespace iap2.Pages
     [Authorize(Roles = "AdminManager, Visitor")]
     public class CartModel : PageModel
     {
+        [BindProperty (SupportsGet = true)]
+        public string ItemId { get; set; }
         public IEnumerable<CartItem> cartItemsList { get; set; }
         private readonly AppDataContext _db;
         private readonly UserManager<AppUser> _userManager;
+        public double totalForProduct { get; set; }
+        public double total { get; set; }
 
         public CartModel(AppDataContext db, UserManager<AppUser> userManager)
         {
@@ -24,6 +28,27 @@ namespace iap2.Pages
         {
             string d = _userManager.GetUserId(User);
             cartItemsList = _db.ShoppingCartItems.Where(c => c.CartId == d).ToList();
+            foreach (var item in cartItemsList)
+            {
+                item.Products = _db.Products.Find(item.ProductId);
+                totalForProduct = item.Quantity * item.Products.Price;
+                total += totalForProduct;
+            }
+
+        }
+        public IActionResult OnGetDelete()
+        {
+            var it = (from c in _db.ShoppingCartItems where c.ItemId == ItemId select c).FirstOrDefault();
+            if (it.Quantity > 1)
+            {
+                it.Quantity--;
+            }
+            else
+            {
+                _db.Remove(_db.ShoppingCartItems.Find(ItemId));
+            }
+            _db.SaveChanges();
+            return RedirectToPage("Cart");
         }
     }
 }

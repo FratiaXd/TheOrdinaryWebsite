@@ -6,9 +6,20 @@
     @foreach (var cartItem in Model.cartItemsList)
     {
         <div class="singleItem">
-            <p>@cartItem.ProductId</p>
+            <h4>Quantity: </h4>
             <P>@cartItem.Quantity</P>
-            <p>@cartItem.DateCreated</p>
+            <a asp-page="Cart" asp-route-id="@cartItem.ItemId" asp-page-handler="Delete">Delete</a>
+            <h4>Name: </h4>
+            <p>@cartItem.Products.Name</p>
+            <h4>Price: </h4>
+            <p>@cartItem.Products.Price $</p>
+            <h4>Sub-total price: </h4>
+            <p>@Model.totalForProduct $</p>
+            <img class="previewImg" src="./assets/@cartItem.Products.ProductImage" alt="@cartItem.Products.ProductImageAlt">
         </div>
     }
+    <br />
+    <br />
+    <h4>Total: </h4>
+    <p>@Model.total $</p>
 </div>

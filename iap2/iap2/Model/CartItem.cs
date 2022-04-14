@@ -16,5 +16,6 @@ namespace iap2.Model
 
         public int ProductId { get; set; }
 
+        public Product Products { get; set; }
     }
 }
