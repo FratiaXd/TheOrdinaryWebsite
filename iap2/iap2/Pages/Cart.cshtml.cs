@@ -12,7 +12,7 @@ namespace iap2.Pages
     public class CartModel : PageModel
     {
         [BindProperty (SupportsGet = true)]
-        public string ItemId { get; set; }
+        public int Id { get; set; }
         public IEnumerable<CartItem> cartItemsList { get; set; }
         private readonly AppDataContext _db;
         private readonly UserManager<AppUser> _userManager;
@@ -38,15 +38,22 @@ namespace iap2.Pages
         }
         public IActionResult OnGetDelete()
         {
-            var it = (from c in _db.ShoppingCartItems where c.ItemId == ItemId select c).FirstOrDefault();
+            var it = _db.ShoppingCartItems.Find(Id);
             if (it.Quantity > 1)
             {
                 it.Quantity--;
             }
             else
             {
-                _db.Remove(_db.ShoppingCartItems.Find(ItemId));
+                _db.Remove(_db.ShoppingCartItems.Find(Id));
             }
+            _db.SaveChanges();
+            return RedirectToPage("Cart");
+        }
+        public IActionResult OnGetAdd()
+        {
+            var it = _db.ShoppingCartItems.Find(Id);
+            it.Quantity++;
             _db.SaveChanges();
             return RedirectToPage("Cart");
         }

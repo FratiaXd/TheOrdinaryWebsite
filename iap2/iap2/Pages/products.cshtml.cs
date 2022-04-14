@@ -10,8 +10,8 @@ namespace iap2.Pages
     {
         [BindProperty]
         public string searchString { get; set; }
-        [BindProperty]
-        public string searchCategory { get; set; }
+        [BindProperty (SupportsGet = true)]
+        public string category { get; set; }
         public IEnumerable<Product> itemsList { get; set; }
         public IEnumerable<string> ProdCategories { get; set; }
 
@@ -35,7 +35,7 @@ namespace iap2.Pages
         }
         public void OnPostCategory()
         {
-            itemsList = _db.Products.Where(p => p.Category.Equals(searchCategory));
+            itemsList = _db.Products.Where(p => p.Category.Equals(category));
         }
         public IActionResult OnGetDelete()
         {

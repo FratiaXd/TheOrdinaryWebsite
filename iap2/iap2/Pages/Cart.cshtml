@@ -3,23 +3,26 @@
 @{
 }
 <div class="itemsBox">
-    @foreach (var cartItem in Model.cartItemsList)
-    {
-        <div class="singleItem">
-            <h4>Quantity: </h4>
-            <P>@cartItem.Quantity</P>
-            <a asp-page="Cart" asp-route-id="@cartItem.ItemId" asp-page-handler="Delete">Delete</a>
-            <h4>Name: </h4>
-            <p>@cartItem.Products.Name</p>
-            <h4>Price: </h4>
-            <p>@cartItem.Products.Price $</p>
-            <h4>Sub-total price: </h4>
-            <p>@Model.totalForProduct $</p>
-            <img class="previewImg" src="./assets/@cartItem.Products.ProductImage" alt="@cartItem.Products.ProductImageAlt">
-        </div>
-    }
-    <br />
-    <br />
-    <h4>Total: </h4>
-    <p>@Model.total $</p>
+    <form method="post">
+            @foreach (var cartItem in Model.cartItemsList)
+            {
+                <div class="singleItem">
+                    <h4>Quantity: </h4>
+                    <p>@cartItem.Quantity</p>
+                    <a asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Add">Add item</a>
+                    <a asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Delete">Remove item</a>
+                    <h4>Name: </h4>
+                    <p>@cartItem.Products.Name</p>
+                    <h4>Price: </h4>
+                    <p>@cartItem.Products.Price $</p>
+                    <h4>Sub-total price: </h4>
+                    <p>@Model.totalForProduct $</p>
+                    <img class="previewImg" src="./assets/@cartItem.Products.ProductImage" alt="@cartItem.Products.ProductImageAlt">
+                </div>
+            }
+            <br />
+            <br />
+            <h4>Total: </h4>
+            <p>@Model.total $</p>
+    </form>
 </div>

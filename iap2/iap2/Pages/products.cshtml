@@ -15,11 +15,11 @@
 </form>
 
 <form method="post">
-    <label asp-for="searchCategory"></label>    
+    <label asp-for="category"></label>    
     <select>
-        @foreach (var searchCategory in Model.ProdCategories)
+        @foreach (string category in Model.ProdCategories)
         {
-            <option asp-for="searchCategory" value="@searchCategory">@searchCategory</option>
+            <option asp-for="category" value="@category">@category</option>
         }
     </select>
     <input asp-page-handler="Category" type="submit" value="Search" />

@@ -6,7 +6,7 @@ namespace iap2.Model
     public class CartItem
     {
         [Key]
-        public string ItemId { get; set; }
+        public int Id { get; set; }
 
         public string CartId { get; set; }
 

@@ -33,7 +33,6 @@ namespace iap2.Pages
             {
                 CartItem cartItem = new CartItem()
                 {
-                    ItemId = Guid.NewGuid().ToString(),
                     ProductId = Id,
                     CartId = cartOwner,
                     Quantity = 1,
