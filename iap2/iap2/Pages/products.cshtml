@@ -3,13 +3,26 @@
 @{
 }
 @{
-    Layout = "_Layout";
+
 }
 
 <form method="post"> 
     <label asp-for="searchString"></label>
     <input asp-for="searchString" />
     <input type="submit" value="Search" />
+    <br />
+    <br />    
+</form>
+
+<form method="post">
+    <label asp-for="searchCategory"></label>    
+    <select>
+        @foreach (var searchCategory in Model.ProdCategories)
+        {
+            <option asp-for="searchCategory" value="@searchCategory">@searchCategory</option>
+        }
+    </select>
+    <input asp-page-handler="Category" type="submit" value="Search" />
 </form>
 
 <div class="itemsBox">

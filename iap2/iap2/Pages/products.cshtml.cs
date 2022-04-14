@@ -10,7 +10,10 @@ namespace iap2.Pages
     {
         [BindProperty]
         public string searchString { get; set; }
+        [BindProperty]
+        public string searchCategory { get; set; }
         public IEnumerable<Product> itemsList { get; set; }
+        public IEnumerable<string> ProdCategories { get; set; }
 
         [BindProperty (SupportsGet = true)]
         public int Id { get; set; }
@@ -24,10 +27,15 @@ namespace iap2.Pages
         public void OnGet()
         {
             itemsList = _db.Products.ToList();
+            ProdCategories = _db.Products.Select(p => p.Category).Distinct();
         }
         public void OnPost()
         {
             itemsList = _db.Products.Where(p => p.Description.Contains(searchString));
+        }
+        public void OnPostCategory()
+        {
+            itemsList = _db.Products.Where(p => p.Category.Equals(searchCategory));
         }
         public IActionResult OnGetDelete()
         {

@@ -47,7 +47,8 @@
             <form method="post" asp-page-handler="Update" asp-route-id="@user.Id">
                 <input asp-for="passwordString"/>
                 <input type="submit" value="Update password" />
-            </form>            
+            </form>  
+            <a asp-page="Manage" asp-route-id="@user.Id">Manage Roles</a>
         </div>
     }
 </div>

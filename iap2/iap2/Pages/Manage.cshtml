@@ -1,0 +1,32 @@
+﻿@page
+@model iap2.Pages.ManageModel
+@{
+}
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Manage User Roles</h2>
+            <p>@Model.Indicate.Email</p>
+        </div>
+        <div class="card-body">
+            @foreach (var role in @Model.model)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@role.RoleId" />
+                    <input type="hidden" asp-for="@role.RoleName" />
+                    <input asp-for="@role.Selected" class="form-check-input" />
+                    <label class="form-check-label" asp-for="@role.Selected">
+                        @role.RoleName
+                    </label>
+                </div>
+            }
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary"
+                   style="width:auto" />
+            <a asp-page="AdminDash" asp-route-id="Id"
+               class="btn btn-primary" style="width:auto">Cancel</a>
+        </div>
+    </div>
+</form>
