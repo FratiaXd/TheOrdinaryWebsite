@@ -8,5 +8,6 @@ namespace iap2.Model
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<CartItem> ShoppingCartItems { get; set; }
     }
 }

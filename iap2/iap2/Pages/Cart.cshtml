@@ -2,3 +2,13 @@
 @model iap2.Pages.CartModel
 @{
 }
+<div class="itemsBox">
+    @foreach (var cartItem in Model.cartItemsList)
+    {
+        <div class="singleItem">
+            <p>@cartItem.ProductId</p>
+            <P>@cartItem.Quantity</P>
+            <p>@cartItem.DateCreated</p>
+        </div>
+    }
+</div>
