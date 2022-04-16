@@ -59,7 +59,17 @@ nav a:hover {
     width: 96%;
 }
 /*home page*/
+#vid {
+    height: 46vw;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
 
+#show_vid {
+    margin-top: 10px;
+    width: 100%;
+}
 /*Products page*/
 .singleItem{
     width: 30%;
