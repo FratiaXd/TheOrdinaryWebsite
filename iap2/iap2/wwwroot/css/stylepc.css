@@ -237,9 +237,10 @@ nav a:hover {
     color: #363636;
 }
 /*Cart*/
-#cartInd {
+.info {
     font-size: 25px;
     margin-top: 3%;
+    text-transform: uppercase;
 }
 table {
     margin-top: 4%;
@@ -299,6 +300,50 @@ th, td {
     font-size: 30px;
     padding-top: 10%;
     padding-bottom: 10%;
+}
+/*Add product*/
+.createProd {
+    background-color: #F5F2ED;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 4%;
+    margin-top: 5%;
+}
+.createProd label {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.createProd input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px
+}
+.createProd textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px
+}
+.prodBig {
+    height: 100px;
+}
+.buttonAdd {
+    background-color: #868686;
+    color: white;
+    margin-left: 15%;
+}
+#buttonsP input {
+    border: 2px solid #868686;
+    width: 70%;
+    margin-top: 20px;
+}
+#buttonsP input:hover {
+    background-color: #DADADA;
+    color: #363636;
+    border: 2px solid #DADADA;
 }
 /**/
 .navbar-list1 {

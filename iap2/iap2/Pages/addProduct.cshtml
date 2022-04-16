@@ -3,67 +3,62 @@
 @{
 }
 
-<form method="post">
+<p class="info">Fill in the form to add/edit a product</p>
+<form method="post" class="createProd">
     <div>
-        <label asp-for=@Model.item.Id></label>
-        <input asp-for=@Model.item.Id readonly/>
+        <label asp-for=@Model.item.Id>ID</label>
+        <input asp-for=@Model.item.Id readonly placeholder="Assigned automatically"/>
     </div>
     <div>
-        <label asp-for=@Model.item.Name></label>
-        <input asp-for=@Model.item.Name/>
+        <label asp-for=@Model.item.Name>NAME</label>
+        <input asp-for=@Model.item.Name  placeholder="Product name.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.Description></label>
-        <input asp-for=@Model.item.Description/>
+        <label asp-for=@Model.item.Description>DESCRIPTION</label>
+        <textarea class="prodBig" asp-for=@Model.item.Description placeholder="Product description.."></textarea>
     </div>
     <div>
-        <label asp-for=@Model.item.Size></label>
-        <input asp-for=@Model.item.Size/>
+        <label asp-for=@Model.item.Size>SIZE</label>
+        <input asp-for=@Model.item.Size placeholder="Product size.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.Ingredients></label>
-        <input asp-for=@Model.item.Ingredients/>
+        <label asp-for=@Model.item.Ingredients>INGREDIENTS</label>
+        <textarea class="prodBig" asp-for=@Model.item.Ingredients placeholder="Product ingredients.."></textarea></>
     </div>
     <div>
-        <label asp-for=@Model.item.Price></label>
-        <input asp-for=@Model.item.Price/>
+        <label asp-for=@Model.item.Price>PRICE</label>
+        <input asp-for=@Model.item.Price placeholder="Product price $.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.Category></label>
-        <input asp-for=@Model.item.Category/>
+        <label asp-for=@Model.item.Category>CATEGORY</label>
+        <input asp-for=@Model.item.Category placeholder="Product category.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImage></label>
-        <input asp-for=@Model.item.ProductImage/>
+        <label asp-for=@Model.item.ProductImage>MAIN IMAGE</label>
+        <input asp-for=@Model.item.ProductImage placeholder="Product image.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImageAlt></label>
-        <input asp-for=@Model.item.ProductImageAlt/>
+        <label asp-for=@Model.item.ProductImageAlt>ALT FOR MAIN IMAGE</label>
+        <input asp-for=@Model.item.ProductImageAlt placeholder="Alternative text for image.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImagePage1></label>
-        <input asp-for=@Model.item.ProductImagePage1/>
+        <label asp-for=@Model.item.ProductImagePage2>IMAGE 2</label>
+        <input asp-for=@Model.item.ProductImagePage2 placeholder="Product image 2.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImagePage2></label>
-        <input asp-for=@Model.item.ProductImagePage2/>
+        <label asp-for=@Model.item.ProductImagePage2Alt>ALT FOR IMAGE 2</label>
+        <input asp-for=@Model.item.ProductImagePage2Alt placeholder="Alternative text for image 2.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImagePage3></label>
-        <input asp-for=@Model.item.ProductImagePage3/>
+        <label asp-for=@Model.item.ProductImagePage3>IMAGE 3</label>
+        <input asp-for=@Model.item.ProductImagePage3 placeholder="Product image 3.."/>
     </div>
     <div>
-        <label asp-for=@Model.item.ProductImagePage1Alt></label>
-        <input asp-for=@Model.item.ProductImagePage1Alt/>
+        <label asp-for=@Model.item.ProductImagePage3Alt>ALT FOR IMAGE 3</label>
+        <input asp-for=@Model.item.ProductImagePage3Alt placeholder="Alternative text for image 3.."/>
     </div>
-    <div>
-        <label asp-for=@Model.item.ProductImagePage2Alt></label>
-        <input asp-for=@Model.item.ProductImagePage2Alt/>
+    <div id="buttonsP">
+        <input class="buttonAdd" type="submit" value="ADD PRODUCT" />
+        <input class="buttonAdd" type="submit" asp-page-handler="Update" value="SAVE CHANGES" />
     </div>
-    <div>
-        <label asp-for=@Model.item.ProductImagePage3Alt></label>
-        <input asp-for=@Model.item.ProductImagePage3Alt/>
-    </div>
-    <input type="submit" value="Save" />
-    <input type="submit" asp-page-handler="Update" value="Update" />
 </form>

@@ -3,10 +3,10 @@
 @{
 }
 
-<div class="itemsBox">
+<div class="rolesBox">
     @foreach (var role in Model.roles)
     {
-        <div class="singleItem">
+        <div class="singleRole">
             <h4>Id:</h4>
             <p>@role.Id</p>
             <h4>Name:</h4>
@@ -28,10 +28,10 @@
 <br />
 <br />
 <br />
-<div class="itemsBox">
+<div class="usersBox">
     @foreach (var user in Model.userRolesViewModel)
     {
-        <div class="singleItem">
+        <div class="singleUser">
             <h4>Id:</h4>
             <p>@user.Id</p>
             <h4>Email:</h4>
