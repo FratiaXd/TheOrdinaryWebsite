@@ -10,12 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - iap2</title>
     <script src="../javascript/anim.js" defer></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">    
-    <link rel="stylesheet" type="text/css" href="~/css/style_pc.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />    
+    <link rel="stylesheet" type="text/css" href="~/css/stylepc.css" />
     <!--<link rel="stylesheet" href="~/css/site.css" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/366979dfd8.js" crossorigin="anonymous"></script>
 </head>
 <body onload="line_animate()">
     <header>
@@ -63,13 +64,20 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - iap2 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <div id="links_section">
+                <a href="https://www.instagram.com/deciem/" class="links"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/deciem" class="links"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/deciem" class="links"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/deciem" class="links"><i class="fab fa-tiktok"></i></a>
+                <a id="about" asp-area="" asp-page="/Privacy" class="links">ABOUT US</a>
+                <p class="links">&copy; 2022 - KATRINA PETREIKYTE</p>
+            </div>           
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/javascript/anim.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

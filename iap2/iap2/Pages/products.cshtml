@@ -1,4 +1,7 @@
 ﻿@page
+@using Microsoft.AspNetCore.Identity
+@using iap2.Model;
+@inject SignInManager<AppUser> SignInManager;
 @model iap2.Pages.productsModel
 @{
 }
@@ -6,16 +9,13 @@
 
 }
 
-<form method="post"> 
-    <label asp-for="searchString"></label>
-    <input asp-for="searchString" />
-    <input type="submit" value="Search" />
-    <br />
-    <br />    
+<form method="post" class="search"> 
+    <input id="searchBar" asp-for="searchString" placeholder="Search.." />
+    <input class="searchButton" type="submit" value="SUBMIT" /> 
 </form>
 
-<form method="post">
-    <label asp-for="category"></label>    
+<form method="post" class="categ">
+    <label asp-for="category">CATEGORIES</label>    
     <select>
         @foreach (string category in Model.ProdCategories)
         {
@@ -28,14 +28,19 @@
 <div class="itemsBox">
     @foreach (var product in Model.itemsList)
     {
-        <div class="singleItem">
-            <a asp-page="SingleProduct" asp-route-id="@product.Id">@product.Name</a>
+        <div class="singleItem">           
             <img class="previewImg" src="./assets/@product.ProductImage" alt="@product.ProductImageAlt">
-            <p>@product.Price $</p>
-            <P>@product.Category</P>
-            <p>@product.Size</p>
-            <a asp-page="addProduct" asp-route-id="@product.Id">Update</a>
-            <a asp-page="products" asp-route-id="@product.Id" asp-page-handler="Delete">Delete</a>
+            <p class="brand">The Ordinary.</p>
+            <a class="itemName" asp-page="SingleProduct" asp-route-id="@product.Id">@product.Name</a>
+            <p class="price">@product.Price $</p>
+            <p class="size">@product.Size</p>
+            @{
+                if (SignInManager.IsSignedIn(User) && User.IsInRole("AdminManager"))
+                {
+                    <a class="adminButton" asp-page="addProduct" asp-route-id="@product.Id">EDIT</a>
+                    <a class="adminButton" asp-page="products" asp-route-id="@product.Id" asp-page-handler="Delete">DELETE</a>
+                }
+            }  
         </div>
     }
 </div>

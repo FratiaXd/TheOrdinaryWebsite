@@ -3,8 +3,18 @@
 @{
 }
 <form method="post">
-    <h3>@Model.item.Name</h3>
-    <img class="previewImg" src="./assets/@Model.item.ProductImage" alt="@Model.item.ProductImageAlt">
-    <p>@Model.item.Price</p>
-    <input asp-route-id="@Model.item.Id" type="submit" value="Add to cart" />
+    <div class="imageHalf">
+        <img class="previewImg" src="./assets/@Model.item.ProductImage" alt="@Model.item.ProductImageAlt">
+        <img class="previewImg" src="./assets/@Model.item.ProductImagePage2" alt="@Model.item.ProductImagePage2Alt">
+        <img class="previewImg" src="./assets/@Model.item.ProductImagePage3" alt="@Model.item.ProductImagePage3Alt">
+    </div>
+    <div class="descriptionHalf">
+        <p id="brandName">The Ordinary</p>
+        <p id="title">@Model.item.Name</p>
+        <p id="size">@Model.item.Size</p>
+        <p id="priceProduct">@Model.item.Price</p>
+        <p>@Model.item.Description</p>
+        <p id="ingredients">Ingredients: @Model.item.Ingredients</p>
+        <input class="buy" asp-route-id="@Model.item.Id" type="submit" value="ADD TO CART" />
+    </div>
 </form>
