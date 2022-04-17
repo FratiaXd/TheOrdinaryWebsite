@@ -57,5 +57,16 @@ namespace iap2.Pages
             _db.SaveChanges();
             return RedirectToPage("Cart");
         }
+        public IActionResult OnGetOrder()
+        {
+            string d = _userManager.GetUserId(User);
+            cartItemsList = _db.ShoppingCartItems.Where(c => c.CartId == d).ToList();
+            foreach (var item in cartItemsList)
+            {
+                _db.Remove(_db.ShoppingCartItems.Find(item.Id));
+            }
+            _db.SaveChanges();
+            return RedirectToPage("Thank");
+        }
     }
 }

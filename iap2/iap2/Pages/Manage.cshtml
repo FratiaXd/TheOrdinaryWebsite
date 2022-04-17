@@ -5,8 +5,8 @@
 <form method="post">
     <div class="card">
         <div class="card-header">
-            <h2>Manage User Roles</h2>
-            <p>@Model.Indicate.Email</p>
+            <h3>MANAGE USER ROLES</h3>
+            <h5>@Model.Indicate.Email</h5>
         </div>
         <div class="card-body">
             @foreach (var role in @Model.model)
@@ -23,9 +23,9 @@
             <div asp-validation-summary="All" class="text-danger"></div>
         </div>
         <div class="card-footer">
-            <input type="submit" value="Update" class="btn btn-primary"
+            <input id="buttonC" type="submit" value="UPDATE" class="btn btn-primary"
                    style="width:auto" />
-            <a asp-page="AdminDash" asp-route-id="Id"
+            <a id="buttonD" asp-page="AdminDash" asp-route-id="Id"
                class="btn btn-primary" style="width:auto">Cancel</a>
         </div>
     </div>

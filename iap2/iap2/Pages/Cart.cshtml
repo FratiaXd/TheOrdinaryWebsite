@@ -3,7 +3,7 @@
 @{
 }
 <p class="info">Your cart</p>
-<table class="cartBox">
+<table class="cartBox" id="cart">
     <tr>
         <th class="imageTable">Image</th>
         <th class="nameTable">Name</th>
@@ -40,3 +40,57 @@
             </tr>
     </form>
 </table>
+@if (Model.cartItemsList.Any())
+{
+    <p class="info">CHECKOUT</p>
+    <form method="post" class="checkF">
+        <p class="naming">DELIVERY ADDRESS</p>
+        <div>
+            <input placeholder="House number.."/>
+        </div>
+        <div>
+            <input placeholder="Street.."/>
+        </div>
+        <div>
+            <input placeholder="Post code.."/>
+        </div>
+        <div>
+            <input placeholder="City.."/>
+        </div>
+        <div>
+            <input placeholder="Country.."/>
+        </div>
+        <p class="naming">BILLING ADDRESS</p>
+        <div>
+            <input placeholder="House number.."/>
+        </div>
+        <div>
+            <input placeholder="Street.."/>
+        </div>
+        <div>
+            <input placeholder="Post code.."/>
+        </div>
+        <div>
+            <input placeholder="City.."/>
+        </div>
+        <div>
+            <input placeholder="Country.."/>
+        </div>
+        <p class="naming">PAYMENT DETAILS</p>
+        <div>
+            <input placeholder="Card number.."/>
+        </div>
+        <div>
+            <input placeholder="Cartholder name.."/>
+        </div>
+        <div>
+            <input placeholder="Expiry date.."/>
+        </div>
+        <div>
+            <input placeholder="CVC code.."/>
+        </div>
+        <p class="naming">AMOUNT TO PAY: @Model.total $</p>
+        <a class="checkoutButton" asp-page-handler="Order">PAY</a>
+    </form>
+}
+
