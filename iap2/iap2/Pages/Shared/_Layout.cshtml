@@ -12,6 +12,7 @@
     <script src="../javascript/anim.js" defer></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />    
     <link rel="stylesheet" type="text/css" href="~/css/stylepc.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/mobile.css" />
     <!--<link rel="stylesheet" href="~/css/site.css" />-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,9 +21,12 @@
 </head>
 <body onload="line_animate()">
     <header>
-        <nav class="navbar navbar-expand-sm">
-            <div class="containerHead">
-                <div class="navbar-collapse collapse">
+        <img id="moto" src="~/assets/moto.png" alt="Brand moto">
+        <img id="logo" src="~/assets/logo.png" alt="Brand logo">
+        <nav class="navbar navbar-expand">
+            <div class="containerHead">               
+                <div class="navbar-collapse ">
+                    
                     <ul class="navbar-list1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">HOME</a>
@@ -50,8 +54,7 @@
                     </ul>
                 </div>
             </div>
-            <img id="moto" src="~/assets/moto.png" alt="Brand moto">
-            <img id="logo" src="~/assets/logo.png" alt="Brand logo">
+
             <partial name="_LoginPartial" />
         </nav>
         <div id="line"></div>

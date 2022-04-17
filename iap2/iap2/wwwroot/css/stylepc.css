@@ -22,15 +22,20 @@ header {
 #logo {
     width: 100px;
     margin-left: 1%;
+    float:left;
 }
 #moto{
     width: 125px;
+    padding-top: 20px;
+    margin-left: 50px;
+    float: left;
 }
 nav {
     margin-left: 2%;
     display: block;
 }
 nav a {
+    margin-top: 3px;
     font-size: 13px;
     margin-left: 1.8%;
     margin-right: 1.8%;
@@ -39,9 +44,14 @@ nav a {
     font-weight: lighter;
 }
 nav a:hover {
-    border-bottom: 1px solid #202020;
-    text-decoration: none;
+    font-weight: 600;
     color: #202020;
+}
+#navB {
+    display:none;
+}
+#navB a{
+    display: none;
 }
 .active {
     font-weight: 600;
@@ -161,8 +171,8 @@ nav a:hover {
     background-color: #868686;
     border: none;
     color: white;
-    padding: 4px 0px 4px 0px;
-    width: 17%;
+    padding: 4px;
+    width: 22%;
     border-radius: 2px;
 }
 .searchButton:hover {
@@ -636,7 +646,7 @@ th, td {
 }
 #logout {
     font-size: 13px;
-    padding-top: 9px;
+    padding-top: 11.5px;
 }
 /* Footer */
 footer {

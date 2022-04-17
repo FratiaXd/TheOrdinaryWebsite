@@ -1,0 +1,50 @@
+﻿@media screen and (max-width: 1143px) 
+{
+    .singleItem {
+        width: 47%;
+    }
+    .imageHalf {
+        float: none;
+        width: 100%;
+    }
+    .imageHalf img {
+        width: 100%;
+        margin-left: 0;
+    }
+    .descriptionHalf {
+        position: unset;
+        display: unset;
+        width: 60%;
+        margin-left: 2%;
+    }
+    .brandName {
+        margin-top: 5%;
+    }
+    .buy {
+        margin-bottom: 8%;
+    }
+    .navbar-list1 {
+        margin-top: 0px;
+        display: block;
+        overflow: auto;
+        clear: both;
+    }
+    .navbar-list2 {
+        display: block;
+        clear: both;
+    }
+    #logo {
+        float: left;
+    }
+    #moto {
+        float: left;
+    }
+    nav {
+        display: block;
+        clear: both;
+        width: 100%;
+    }
+    header {
+        position: unset;
+    }
+}
