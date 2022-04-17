@@ -140,7 +140,7 @@ nav a:hover {
     margin-top: 30px;
     margin-left: 27%;
 }
-#searchBar {
+.searchBar {
     width: 45%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -163,6 +163,7 @@ nav a:hover {
     background-color: #DADADA;
     color: #363636;
 }
+
 /*Single product page*/
 .imageHalf {
     margin-top: 15px;
@@ -344,6 +345,103 @@ th, td {
     background-color: #DADADA;
     color: #363636;
     border: 2px solid #DADADA;
+}
+/*Dashboard*/
+.singleRole {
+    height: 50px;
+}
+.singleUser {
+    height: 50px;
+}
+#passBox {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 3px 1px 3px 1px;
+    margin: 4px;
+}
+.passButton {
+    background-color: #868686;
+    border: none;
+    color: white;
+    padding: 4px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.passButton:hover {
+    background-color: #DADADA;
+    color: #363636;
+    text-decoration: none;
+}
+#passButt {
+    background-color: #868686;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 2px;
+    margin-left: 3px;
+
+}
+#passButt:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+#passTd {
+    width: 24%;
+}
+#roleH {
+    text-transform: uppercase;
+    margin-top: 25px;
+    font-size: 25px;
+}
+
+#userH {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+/*Login*/
+.row {
+    text-transform: uppercase;
+}
+.logBar {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    padding: 3px 1px 3px 1px;
+    margin-right: 10px;
+}
+.logBtn {
+    background-color: #868686;
+    border: none;
+    padding: 5px 13px;
+    color: white;
+    border-radius: 2px;
+}
+
+.logBtn:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+.logQ {
+    color: #363636;
+}
+.logQ:hover {
+    color: #DADADA;
+}
+.link {
+    color: #DADADA;
+}
+.link:hover {
+    color: #363636;
 }
 /**/
 .navbar-list1 {
