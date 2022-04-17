@@ -70,6 +70,12 @@ nav a:hover {
 #show_vid {
     width: 100%;
 }
+.show {
+    margin-left: 30%;
+}
+.show img {
+    width: 40%;
+}
 /*Products page*/
 .singleItem {
     width: 30.3%;
@@ -183,14 +189,14 @@ nav a:hover {
     height: 100%;
     text-align: justify;
 }
-#brandName {
+.brandName {
     margin-top: 18%;
     text-transform: uppercase;
     margin-bottom: 5px;
     padding-bottom: 0;
 }
 
-#title {
+.title {
     width: 50%;
     text-transform: uppercase;
     font-size: 20px;
@@ -236,6 +242,31 @@ nav a:hover {
 .buy:hover{
     background-color: #DADADA;
     color: #363636;
+}
+/*About us*/
+.contName {
+    margin-top: 17%;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+#descrUs {
+    margin-top: 2%;
+}
+#smallTit {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 2%;
+    text-transform: uppercase;
+}
+.addr {
+    margin:0;
+    padding:0;
+}
+#em {
+    margin-top: 2%;
 }
 /*Cart*/
 .info {
@@ -442,6 +473,64 @@ th, td {
 }
 .link:hover {
     color: #363636;
+}
+/*User page*/
+#update-profile-button {
+    background-color: #868686;
+    border: none;
+    padding: 5px 13px;
+    color: white;
+    border-radius: 2px;
+}
+#update-profile-button:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+#change-email-button {
+    background-color: #868686;
+    border: none;
+    padding: 5px 13px;
+    color: white;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+#change-email-button:hover {
+     background-color: #DADADA;
+     color: #363636;
+}
+.nav-link {
+    color: #868686;
+}
+.col-md-6 button {
+    background-color: #868686;
+    border: none;
+    padding: 5px 13px;
+    color: white;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.col-md-6 button:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+#enable-authenticator {
+    background-color: #868686;
+    border: none;
+    padding: 5px 13px;
+    color: white;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+#enable-authenticator:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+#email-verification {
+    background-color: #fdfbfb;
+    color: #363636;
+}
+#email-verification:hover {
+    color: #DADADA;
 }
 /**/
 .navbar-list1 {
