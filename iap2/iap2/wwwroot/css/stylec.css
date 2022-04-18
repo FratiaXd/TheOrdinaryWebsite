@@ -155,6 +155,8 @@ nav a:hover {
 .search {
     margin-top: 30px;
     margin-left: 27%;
+    clear: both;
+    margin-bottom: 5%;
 }
 .searchBar {
     width: 45%;
@@ -179,7 +181,72 @@ nav a:hover {
     background-color: #DADADA;
     color: #363636;
 }
+.sButton {
+    background-color: #868686;
+    border: none;
+    color: white;
+    padding: 4px;
+    width: 15%;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-left: 2%;
+}
+.sButton:hover {
+    background-color: #DADADA;
+    color: #363636;
+}
+.categ {
+    clear: both;
+}
+.recomBox {
 
+}
+.recomBox p {
+    text-transform: uppercase;
+}
+.singleRecom1 {
+    float: left;
+    width: 20%;
+    background-color: #DADADA;
+    margin-bottom: 7%;
+}
+.singleRecom1 p {
+
+}
+.singleRecom2 p {
+    
+}
+.singleRecom2 {
+    float: left;
+    width: 20%;
+    margin-left: 2%;
+    background-color: #DADADA;
+}
+.singleRecom1 img {
+    width: 100%;
+    padding: 10%;
+}
+.singleRecom2 img {
+    width: 100%;
+    padding: 10%;
+}
+.txtR {
+    font-weight: 600;
+    margin-left: 10%;
+}
+.txtB {
+    color: #363636;
+    text-transform: uppercase;
+    margin-left: 10%;
+}
+.txtB:hover {
+    color:  #363636;
+}
+#tit {
+    font-size: 23px;
+    font-weight: 600;
+    color: #363636;
+}
 /*Single product page*/
 .imageHalf {
     margin-top: 15px;
@@ -255,7 +322,7 @@ nav a:hover {
 }
 /*About us*/
 .contName {
-    margin-top: 17%;
+    margin-top: 15%;
     text-transform: uppercase;
     margin-bottom: 5px;
     padding-bottom: 0;
