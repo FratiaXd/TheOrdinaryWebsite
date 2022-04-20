@@ -24,14 +24,14 @@
                 <tr class="cartItem">
                     <td class="imageTable"><img class="previewImg" src="./assets/@cartItem.Products.ProductImage" alt="@cartItem.Products.ProductImageAlt"></td>
                     <td class="nameTable">@cartItem.Products.Name</td>
-                    <td class="priceTable">@cartItem.Products.Price $</td>
-                    <td class="qntTable">@cartItem.Quantity</td>
+                    <td class="priceTable" id="prodPrice">@cartItem.Products.Price $</td>
+                    <td class="qntTable" id="prodQnt">@cartItem.Quantity</td>
                     <td class="editTable">
-                        <a class="edits" asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Add">+            </a>
+                        <a class="edits" asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Add">+</a>
 
                         <a class="edits" asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Delete">—</a>
                     </td>
-                    <td class="totTable">@Model.totalForProduct $</td>
+                    <td class="totTable" id="totalResult">@Model.totalForProduct $</td>
                 </tr>
             }
             <tr>

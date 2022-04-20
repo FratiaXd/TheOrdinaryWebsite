@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,8 +33,10 @@ namespace iap2.Pages
             {
                 item.Products = _db.Products.Find(item.ProductId);
                 totalForProduct = item.Quantity * item.Products.Price;
+                totalForProduct = Math.Round(totalForProduct, 2);
                 total += totalForProduct;
             }
+            total = Math.Round(total, 2);
 
         }
         public IActionResult OnGetDelete()
