@@ -21,6 +21,7 @@ namespace iap2.Pages
 
         [BindProperty(SupportsGet = true)]       
         public string Id { get; set; }
+        [BindProperty (SupportsGet = true)]
         public bool Selected { get; set; }
         public AppUser Indicate { get; set; }
         public List<ManageUserRolesViewModel> model { get; set; }
@@ -55,18 +56,25 @@ namespace iap2.Pages
                 return Page();
             }
             var roles = await _userManager.GetRolesAsync(user);
+            if (roles == null)
+            {
+                return Page();
+            }
+            /*
             var result = await _userManager.RemoveFromRolesAsync(user, roles);
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Cannot remove user existing roles");
                 return Page();
             }
-            //result = await _userManager.AddToRolesAsync(user, model.Where(x => x.Selected).Select(y => y.RoleName));
+            var new_roles1 = model.Where(s => s.Selected == true);
+            var new_roles2 = new_roles1.Select(y => y.RoleName);
+            result = await _userManager.AddToRolesAsync(user, new_roles2);
             if (!result.Succeeded)
             {
                 ModelState.AddModelError("", "Cannot add selected roles to user");
                 return Page();
-            }
+            }*/
             return RedirectToPage("AdminDash");
         }
     }

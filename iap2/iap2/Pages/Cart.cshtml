@@ -10,7 +10,6 @@
         <th class="priceTable">Price (each)</th>
         <th class="qntTable">Quantity</th>
         <th class="editTable">Edit</th>
-        <th class="totTable">Item total</th>
     </tr>
     <form method="post">
         @if (!Model.cartItemsList.Any())
@@ -31,7 +30,6 @@
 
                         <a class="edits" asp-page="Cart" asp-route-id="@cartItem.Id" asp-page-handler="Delete">—</a>
                     </td>
-                    <td class="totTable" id="totalResult">@Model.totalForProduct $</td>
                 </tr>
             }
             <tr>
