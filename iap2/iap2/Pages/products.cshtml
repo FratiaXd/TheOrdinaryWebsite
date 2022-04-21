@@ -9,19 +9,25 @@
 
 }
 
-<div class="recomBox">
-    <p id="tit">Recommedations for you</p>
-    <div class="singleRecom1">        
-        <img src="./assets/@Model.Recommen1.ProductImage" alt="@Model.Recommen1.ProductImageAlt">
-        <a class="txtB" asp-page="SingleProduct" asp-route-id="@Model.Recommen1.Id">@Model.Recommen1.Name</a>
-        <p class="txtR">@Model.Recommen2.Price $</p>
-    </div>
-    <div class="singleRecom2">        
-        <img src="./assets/@Model.Recommen2.ProductImage" alt="@Model.Recommen2.ProductImageAlt">
-        <a class="txtB" asp-page="SingleProduct" asp-route-id="@Model.Recommen2.Id">@Model.Recommen2.Name</a>
-        <p class="txtR">@Model.Recommen2.Price $</p>
-    </div>    
-</div>
+@{
+    if (@Model.Recommen1 != null && @Model.Recommen2 != null)
+    {
+        <div class="recomBox">
+            <p id="tit">Recommedations for you</p>
+            <div class="singleRecom1">        
+                <img src="./assets/@Model.Recommen1.ProductImage" alt="@Model.Recommen1.ProductImageAlt">
+                <a class="txtB" asp-page="SingleProduct" asp-route-id="@Model.Recommen1.Id">@Model.Recommen1.Name</a>
+                <p class="txtR">@Model.Recommen2.Price $</p>
+            </div>
+            <div class="singleRecom2">        
+                <img src="./assets/@Model.Recommen2.ProductImage" alt="@Model.Recommen2.ProductImageAlt">
+                <a class="txtB" asp-page="SingleProduct" asp-route-id="@Model.Recommen2.Id">@Model.Recommen2.Name</a>
+                <p class="txtR">@Model.Recommen2.Price $</p>
+            </div>    
+        </div>
+    }
+}
+
 
 <form method="post" class="search"> 
     <input class="searchBar" asp-for="searchString" placeholder="Search.." />
@@ -29,10 +35,9 @@
 </form>
 
 
-
 <form method="post" class="categ">
-    <label asp-for="category">CATEGORIES</label>    
-    <select>
+    <label id="dropdLabel" asp-for="category">CATEGORIES:</label>    
+    <select name="categSearch" id="dropdown">
         @foreach (string category in Model.ProdCategories)
         {
             <option asp-for="category" value="@category">@category</option>

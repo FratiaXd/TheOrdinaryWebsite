@@ -189,7 +189,6 @@ nav a:hover {
     width: 15%;
     border-radius: 2px;
     text-transform: uppercase;
-    margin-left: 2%;
 }
 .sButton:hover {
     background-color: #DADADA;
@@ -197,6 +196,21 @@ nav a:hover {
 }
 .categ {
     clear: both;
+}
+#dropdown {
+    width: 20%;
+    padding: 3px 1px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+#dropdLabel {
+    font-size: 16px;
+    margin-right: 10px;
 }
 .recomBox {
 

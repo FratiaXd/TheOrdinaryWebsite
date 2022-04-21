@@ -50,11 +50,14 @@ namespace iap2.Pages
         }
         public void OnPost()
         {
+            ProdCategories = _db.Products.Select(p => p.Category).Distinct();
             itemsList = _db.Products.Where(p => p.Description.Contains(searchString));
         }
         public void OnPostCategory()
         {
-            itemsList = _db.Products.Where(p => p.Category.Equals(category));
+            ProdCategories = _db.Products.Select(p => p.Category).Distinct();
+            string ctg = Request.Form["categSearch"];
+            itemsList = _db.Products.Where(p => p.Category.Contains(ctg));
         }
         public IActionResult OnGetDelete()
         {
