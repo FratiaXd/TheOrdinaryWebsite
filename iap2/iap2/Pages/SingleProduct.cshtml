@@ -12,7 +12,7 @@
         <p class="brandName">The Ordinary</p>
         <p class="title">@Model.item.Name</p>
         <p id="size">@Model.item.Size</p>
-        <p id="priceProduct">@Model.item.Price</p>
+        <p id="priceProduct">@Model.item.Price $</p>
         <p>@Model.item.Description</p>
         <p id="ingredients">Ingredients: @Model.item.Ingredients</p>
         <input class="buy" asp-route-id="@Model.item.Id" type="submit" value="ADD TO CART" />
